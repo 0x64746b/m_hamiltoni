@@ -1,4 +1,4 @@
 (fp_lib_table
-  (lib (name kbd)(type KiCad)(uri D:/tmp/crkbd/corne-light/pcb/kbd/kicad-footprints/kbd.pretty)(options "")(descr ""))
   (lib (name Switch_Keyboard_Kailh)(type KiCad)(uri D:/tmp/keyswitch-kicad-library/keyswitch-kicad-library/modules/Switch_Keyboard_Kailh.pretty)(options "")(descr ""))
+  (lib (name kbd)(type KiCad)(uri ${KIPRJMOD}/libs/kbd/kicad-footprints/kbd.pretty)(options "")(descr ""))
 )
