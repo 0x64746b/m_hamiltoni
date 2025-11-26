@@ -1,0 +1,52 @@
+meta:
+  engine: 4.1.0
+units:
+  $default_width:  cx
+  $default_height: cy
+  $default_spread: cx
+  $default_padding: cy
+points:
+  zones:
+    alphas:
+      columns:
+        pinky:
+          key.splay: 10
+          rows.top.shift: [-4.5, 0]
+        ring:
+          key.stagger: 14.1
+        middle:
+          key:
+            origin: [-11,-9]
+            splay: -10
+            stagger: 6.5
+        index:
+          key:
+            origin: [-10, -7]
+            splay: -11
+            stagger: -3.2
+        inner:
+      rows:
+        bottom:
+        home:  
+        top:
+    thumbs:
+      anchor:
+        ref: alphas_inner_bottom
+        shift: [-9, -22]
+      columns:
+        first:
+          key:
+            splay: 16
+        second:
+          key:
+            origin: [-9, -9.7]
+            splay: -12
+        third:
+          key:
+            origin: [-9, -9.3]
+            splay: -18
+      rows:
+        only:
+outlines:
+pcbs:
+cases:
