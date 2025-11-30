@@ -56,12 +56,21 @@ points:
       rows:
         only:
 outlines:
-  pcb:
+  _keys:
     - what: rectangle
       where: true
       size: [cx, cy]
       bound: true
       fillet: 1
+    - what: circle
+      where: alphas_index_bottom
+      radius: 5
+      operation: subtract
+      adjust:
+        shift: [-8.08, -13.22]
+  pcb:
+    - what: outline
+      name: _keys
     - what: rectangle
       where: alphas_inner_top
       size: [18, cy]
@@ -76,11 +85,16 @@ outlines:
       adjust:
         shift: [18, -12]
       fillet: 1
-    - what: circle
-      where: alphas_index_bottom
-      radius: 5
+  _mounting_plate:
+    - what: outline
+      name: _keys
+    - what: rectangle
+      where: true
+      size: 13.8
       operation: subtract
-      adjust:
-        shift: [-8.08, -13.22]
 pcbs:
 cases:
+  mounting_plate:
+    - what: outline
+      name: _mounting_plate
+      extrude: 1.2
