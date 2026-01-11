@@ -1,0 +1,100 @@
+meta:
+  engine: 4.1.0
+units:
+  $default_width:  cx
+  $default_height: cy
+  $default_spread: cx
+  $default_padding: cy
+points:
+  zones:
+    alphas:
+      columns:
+        pinky:
+          key.splay: 10
+          rows.top:
+            shift: [-4.5, 0]
+            bind: [0, 5, 0, 0]
+        ring:
+          key.stagger: 14.1
+          rows.bottom.bind: [0, 20, 0, 0]
+        middle:
+          key:
+            origin: [-11,-9]
+            splay: -10
+            stagger: 6.5
+          rows.home.bind: 0
+        index:
+          key:
+            origin: [-10, -7]
+            splay: -11
+            stagger: -3.2
+          rows.bottom.bind: [0, 3]
+        inner:
+      rows:
+        bottom:
+        home:  
+        top:
+    thumbs:
+      anchor:
+        ref: alphas_inner_bottom
+        shift: [-9, -22]
+      columns:
+        first:
+          key:
+            splay: 16
+            bind: [9, 12, 0, 0]
+        second:
+          key:
+            origin: [-9, -9.7]
+            splay: -12
+            bind: [0, 0, 0, 0]
+        third:
+          key:
+            origin: [-9, -9.3]
+            splay: -18
+            bind: [0, 0, 0, 16]
+      rows:
+        only:
+outlines:
+  _keys:
+    - what: rectangle
+      where: true
+      size: [cx, cy]
+      bound: true
+      fillet: 1
+    - what: circle
+      where: alphas_index_bottom
+      radius: 5
+      operation: subtract
+      adjust:
+        shift: [-8.08, -13.22]
+  pcb:
+    - what: outline
+      name: _keys
+    - what: rectangle
+      where: alphas_inner_top
+      size: [18, cy]
+      operation: add
+      adjust:
+        shift: [18, -5.4]
+      fillet: 1
+    - what: rectangle
+      where: alphas_inner_home
+      size: [18, 36]
+      operation: add
+      adjust:
+        shift: [18, -12]
+      fillet: 1
+  _mounting_plate:
+    - what: outline
+      name: _keys
+    - what: rectangle
+      where: true
+      size: 13.8
+      operation: subtract
+pcbs:
+cases:
+  mounting_plate:
+    - what: outline
+      name: _mounting_plate
+      extrude: 1.2
